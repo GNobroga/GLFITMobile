@@ -1,15 +1,18 @@
+import IWorkout from "../models/workout";
+
 export interface IUser {
     name: string; 
-    level: string;
+    level: 'beginner' | 'intermediate' | 'advanced' | 'none';
     workoutDays: number[];
-    myWorkouts: any[];
+    myWorkouts: IWorkout[];
     dailyProgress: string[];
     lastWorkout: string;
+    
 }
 
 const initialState: IUser = {
     name:'',
-    level:'', // beginner, intermediate, advanced
+    level: 'none', // beginner, intermediate, advanced
     workoutDays:[], // 0-6 (Semana começa no DOMINGO)
     myWorkouts:[],
     lastWorkout:'', // ID
@@ -40,6 +43,7 @@ export default (state = initialState, action: any) => {
             }
             return {...state, myWorkouts};
         case 'DEL_WORKOUT':
+            console.log(action.payload.workout.id)
             myWorkouts = myWorkouts.filter(i=>i.id!=action.payload.workout.id);
             return {...state, myWorkouts};
         case 'ADD_PROGRESS':

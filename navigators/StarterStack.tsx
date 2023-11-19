@@ -4,6 +4,8 @@ import StarterName from "../screens/starter/StarterName";
 import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
 import StarterDias from "../screens/starter/StarterDias";
+import StarterNivel from "../screens/starter/StarterNivel";
+import StarterRecommendations from "../screens/starter/StarterRecommendations";
 
 const StackNavigator = createStackNavigator();
 
@@ -41,6 +43,8 @@ const StarterStack = () => {
       />
       <StackNavigator.Screen name="StarterName" component={StarterName} />
       <StackNavigator.Screen name="StarterDias" component={StarterDias}/>
+      <StackNavigator.Screen name="StarterNivel" component={StarterNivel}/>
+      <StackNavigator.Screen name="StarterRecommendations" component={StarterRecommendations}/>
     </StackNavigator.Navigator>
   );
 };

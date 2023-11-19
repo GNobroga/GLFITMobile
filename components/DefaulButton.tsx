@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 
 interface IButtonProps {
-    width: string;
+    width?: string;
     bgcolor: string;
 }
 
@@ -13,4 +13,5 @@ export default styled.TouchableHighlight<IButtonProps>`
     justify-content:center;
     align-items:center;
     height: 50px;
+    font-size: 18px;
 `;

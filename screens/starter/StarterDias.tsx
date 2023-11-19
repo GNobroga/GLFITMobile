@@ -14,23 +14,26 @@ const Container = styled.SafeAreaView`
   padding: 10%;
 `;
 const HeaderText = styled.Text`
-  font-size: 15px;
+	font-size: 18px;
   color: #333;
   text-align: center;
   margin-bottom: 30px;
+	color: #9438F5;
 `;
 
 const BoldText = styled.Text`
   font-weight: bold;
+	color: #9438F5;
+	font-size: 18px;
 `;
 const DaysArea = styled.View`
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
+	flex: 1;
 `;
 
 const TextDay = styled.Text`
   color: #fff;
+	font-size: 18px;
 `;
 
 const StarterDias = () => {
@@ -93,7 +96,6 @@ const StarterDias = () => {
             workoutDays.includes(1) ? "rgba(148, 56, 245, 0.35)" : "#9438F5"
           }
           onPress={() => toggleDay(1)}
-          width={"100%"}
           style={{ marginBottom: 20 }}
           underlayColor="#CCC"
         >
@@ -104,7 +106,6 @@ const StarterDias = () => {
             workoutDays.includes(2) ? "rgba(148, 56, 245, 0.35)" : "#9438F5"
           }
           onPress={() => toggleDay(2)}
-          width={"100%"}
           style={{ marginBottom: 20 }}
           underlayColor="#CCC"
         >
@@ -115,7 +116,6 @@ const StarterDias = () => {
             workoutDays.includes(3) ? "rgba(148, 56, 245, 0.35)" : "#9438F5"
           }
           onPress={() => toggleDay(3)}
-          width={"100%"}
           style={{ marginBottom: 20 }}
           underlayColor="#CCC"
         >
@@ -126,7 +126,6 @@ const StarterDias = () => {
             workoutDays.includes(4) ? "rgba(148, 56, 245, 0.35)" : "#9438F5"
           }
           onPress={() => toggleDay(4)}
-          width={"100%"}
           style={{ marginBottom: 20 }}
           underlayColor="#CCC"
         >
@@ -137,7 +136,6 @@ const StarterDias = () => {
             workoutDays.includes(5) ? "rgba(148, 56, 245, 0.35)" : "#9438F5"
           }
           onPress={() => toggleDay(5)}
-          width={"100%"}
           style={{ marginBottom: 20 }}
           underlayColor="#CCC"
         >
@@ -145,10 +143,9 @@ const StarterDias = () => {
         </DefaultButton>
         <DefaultButton
           bgcolor={
-            workoutDays.includes(6) ? "rgba(148, 56, 245, 0.35)" : "#9438F5"
+            workoutDays.includes(6) ? "rgba(148, 56, 245, 0.50)" : "#9438F5"
           }
           onPress={() => toggleDay(6)}
-          width={"100%"}
           style={{ marginBottom: 20 }}
           underlayColor="#CCC"
         >
@@ -159,7 +156,6 @@ const StarterDias = () => {
             workoutDays.includes(0) ? "rgba(148, 56, 245, 0.35)" : "#9438F5"
           }
           onPress={() => toggleDay(0)}
-          width={"100%"}
           style={{ marginBottom: 20 }}
           underlayColor="#CCC"
         >
