@@ -11,7 +11,7 @@ import NextButton from "../../components/NextButton";
 const Container = styled.SafeAreaView`
   flex: 1;
   background-color: #fff;
-	padding: 10%;
+  padding: 10%;
 `;
 const HeaderText = styled.Text`
   font-size: 15px;
@@ -30,38 +30,36 @@ const DaysArea = styled.View`
 `;
 
 const TextDay = styled.Text`
-	color: #fff;
+  color: #fff;
 `;
 
 const StarterDias = () => {
+  const route = useRoute();
+  const navigation = useNavigation();
 
-	const route = useRoute();
-	const navigation = useNavigation();
+  const workoutDays = useSelector((user: IUser) => user.workoutDays);
+  const name = useSelector((user: IUser) => user.name);
 
-	const workoutDays = useSelector((user: IUser) => user.workoutDays);
-	const name = useSelector((user: IUser) => user.name);
+  const dispatch = useDispatch();
 
-	const dispatch = useDispatch();
-
-	const nextAction = () => {
-		if (workoutDays.length == 0) {
-			alert("Você precisa treinar pelo menos 1 dia!");
+  const nextAction = () => {
+    if (workoutDays.length == 0) {
+      alert("Você precisa treinar pelo menos 1 dia!");
       return;
-		}
+    }
 
-			navigation.navigate("StarterNivel" as never);
-	};
+    navigation.navigate("StarterNivel" as never);
+  };
 
-	React.useLayoutEffect(() => {
-		navigation.setOptions({
-			title: "",
-			headerRight: () => <NextButton text="Próximo" onPress={nextAction} />,
-			headerRightContainerStyle: {
-				marginRight: 10,
-			},
-		} as StackNavigationOptions)
-	}, [workoutDays]);
-
+  React.useLayoutEffect(() => {
+    navigation.setOptions({
+      title: "",
+      headerRight: () => <NextButton text="Próximo" onPress={nextAction} />,
+      headerRightContainerStyle: {
+        marginRight: 10,
+      },
+    } as StackNavigationOptions);
+  }, [workoutDays]);
 
   const toggleDay = (d: number) => {
     let newWorkoutDays = [...workoutDays];
@@ -72,7 +70,10 @@ const StarterDias = () => {
       newWorkoutDays = newWorkoutDays.filter((i) => i != d);
     }
 
-		dispatch({ type: 'SET_WORKOUTDAYS', payload: { workoutDays: newWorkoutDays }});
+    dispatch({
+      type: "SET_WORKOUTDAYS",
+      payload: { workoutDays: newWorkoutDays },
+    });
   };
 
   let firstName = name.split(" ")[0];
@@ -88,7 +89,9 @@ const StarterDias = () => {
 
       <DaysArea>
         <DefaultButton
-          bgcolor={workoutDays.includes(1) ? "rgba(148, 56, 245, 0.35)" : "#9438F5"}
+          bgcolor={
+            workoutDays.includes(1) ? "rgba(148, 56, 245, 0.35)" : "#9438F5"
+          }
           onPress={() => toggleDay(1)}
           width={"100%"}
           style={{ marginBottom: 20 }}
@@ -97,7 +100,9 @@ const StarterDias = () => {
           <TextDay>Segunda</TextDay>
         </DefaultButton>
         <DefaultButton
-          bgcolor={workoutDays.includes(2) ? "rgba(148, 56, 245, 0.35)" : "#9438F5"}
+          bgcolor={
+            workoutDays.includes(2) ? "rgba(148, 56, 245, 0.35)" : "#9438F5"
+          }
           onPress={() => toggleDay(2)}
           width={"100%"}
           style={{ marginBottom: 20 }}
@@ -106,7 +111,9 @@ const StarterDias = () => {
           <TextDay>Terça</TextDay>
         </DefaultButton>
         <DefaultButton
-          bgcolor={workoutDays.includes(3) ? "rgba(148, 56, 245, 0.35)" : "#9438F5"}
+          bgcolor={
+            workoutDays.includes(3) ? "rgba(148, 56, 245, 0.35)" : "#9438F5"
+          }
           onPress={() => toggleDay(3)}
           width={"100%"}
           style={{ marginBottom: 20 }}
@@ -115,7 +122,9 @@ const StarterDias = () => {
           <TextDay>Quarta</TextDay>
         </DefaultButton>
         <DefaultButton
-          bgcolor={workoutDays.includes(4) ? "rgba(148, 56, 245, 0.35)" : "#9438F5"}
+          bgcolor={
+            workoutDays.includes(4) ? "rgba(148, 56, 245, 0.35)" : "#9438F5"
+          }
           onPress={() => toggleDay(4)}
           width={"100%"}
           style={{ marginBottom: 20 }}
@@ -124,7 +133,9 @@ const StarterDias = () => {
           <TextDay>Quinta</TextDay>
         </DefaultButton>
         <DefaultButton
-          bgcolor={workoutDays.includes(5) ? "rgba(148, 56, 245, 0.35)" : "#9438F5"}
+          bgcolor={
+            workoutDays.includes(5) ? "rgba(148, 56, 245, 0.35)" : "#9438F5"
+          }
           onPress={() => toggleDay(5)}
           width={"100%"}
           style={{ marginBottom: 20 }}
@@ -133,7 +144,9 @@ const StarterDias = () => {
           <TextDay>Sexta</TextDay>
         </DefaultButton>
         <DefaultButton
-          bgcolor={workoutDays.includes(6) ? "rgba(148, 56, 245, 0.35)" : "#9438F5"}
+          bgcolor={
+            workoutDays.includes(6) ? "rgba(148, 56, 245, 0.35)" : "#9438F5"
+          }
           onPress={() => toggleDay(6)}
           width={"100%"}
           style={{ marginBottom: 20 }}
@@ -142,7 +155,9 @@ const StarterDias = () => {
           <TextDay>Sábado</TextDay>
         </DefaultButton>
         <DefaultButton
-          bgcolor={workoutDays.includes(0) ? "rgba(148, 56, 245, 0.35)" : "#9438F5"}
+          bgcolor={
+            workoutDays.includes(0) ? "rgba(148, 56, 245, 0.35)" : "#9438F5"
+          }
           onPress={() => toggleDay(0)}
           width={"100%"}
           style={{ marginBottom: 20 }}
@@ -154,6 +169,5 @@ const StarterDias = () => {
     </Container>
   );
 };
-
 
 export default StarterDias;
