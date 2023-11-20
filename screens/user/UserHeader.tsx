@@ -1,6 +1,8 @@
 import { ImageBackground, Text, View, TouchableHighlight } from "react-native";
+import { useSelector } from "react-redux";
 
 import styled from "styled-components/native";
+import { IUser } from "../../reducers/userReducer";
 
 const Container = styled.SafeAreaView`
     flex: 1;
@@ -79,6 +81,9 @@ const PointItemTextPoint = styled.Text`
 `;
 
 const UserHeader = () => {
+    
+    const name = useSelector((user: IUser) => user.name);
+
     return (
         <Container>
             <View style={{ padding: 10, gap: 15}}>
@@ -97,14 +102,13 @@ const UserHeader = () => {
                         <MenuItemText>Pontos</MenuItemText>
                     </MenuItem>
                 </Menu>
-
             </View>
             <Wrapper>
                 <Line></Line>
             </Wrapper>
             <Profile>
                 <ImageBackground source={require('../../assets/Photo.png')} style={{ width: 125, height: 125}}/>
-                <Title style={{ fontWeight: '400', fontSize: 22}}>Gabriel</Title>
+                <Title style={{ fontWeight: '400', fontSize: 22}}>{ name }</Title>
                 <Text style={{ fontSize: 18, opacity: 0.5 }}>Castelo - ES</Text>
             </Profile>
             <PointArea>
