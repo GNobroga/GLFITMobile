@@ -2,15 +2,16 @@ import React, {useState, useEffect} from 'react';
 import styled from 'styled-components/native';
 import DefaultButton from './DefaulButton';
 import { useDispatch } from 'react-redux';
+import { View } from 'react-native';
 
 const BalloonTriangle = styled.View`
     width:0;
     height:0;
     borderLeftColor:transparent;
-    borderLeftWidth:15;
-    borderBottomWidth:15;
+    borderLeftWidth:15px;
+    borderBottomWidth:15px;
     borderBottomColor:#EDEDED;
-    borderRightWidth:15;
+    borderRightWidth:15px;
     borderRightColor:transparent;
 `;
 const BalloonArea = styled.View`
@@ -122,7 +123,7 @@ export default (props: IProps) => {
     }, []);
 
     return (
-        <>
+        <View>
             <BalloonTriangle></BalloonTriangle>
             <BalloonArea>
                 {dayOff &&
@@ -157,6 +158,6 @@ export default (props: IProps) => {
                     </>
                 }
             </BalloonArea>
-        </>
+        </View>
     );
 }

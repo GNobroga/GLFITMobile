@@ -93,7 +93,7 @@ const StarterDias = () => {
       <DaysArea>
         <DefaultButton
           bgcolor={
-            workoutDays.includes(1) ? "rgba(148, 56, 245, 0.35)" : "#9438F5"
+            workoutDays.includes(1) ? "rgba(148, 56, 245, 0.6)" : "rgba(148, 56, 245, 1)"
           }
           onPress={() => toggleDay(1)}
           style={{ marginBottom: 20 }}
@@ -103,7 +103,7 @@ const StarterDias = () => {
         </DefaultButton>
         <DefaultButton
           bgcolor={
-            workoutDays.includes(2) ? "rgba(148, 56, 245, 0.35)" : "#9438F5"
+            workoutDays.includes(2) ? "rgba(148, 56, 245, 0.6)" : "rgba(148, 56, 245, 1)"
           }
           onPress={() => toggleDay(2)}
           style={{ marginBottom: 20 }}
@@ -113,7 +113,7 @@ const StarterDias = () => {
         </DefaultButton>
         <DefaultButton
           bgcolor={
-            workoutDays.includes(3) ? "rgba(148, 56, 245, 0.35)" : "#9438F5"
+            workoutDays.includes(3) ? "rgba(148, 56, 245, 0.6)" : "rgba(148, 56, 245, 1)"
           }
           onPress={() => toggleDay(3)}
           style={{ marginBottom: 20 }}
@@ -123,7 +123,7 @@ const StarterDias = () => {
         </DefaultButton>
         <DefaultButton
           bgcolor={
-            workoutDays.includes(4) ? "rgba(148, 56, 245, 0.35)" : "#9438F5"
+            workoutDays.includes(4) ? "rgba(148, 56, 245, 0.6)" : "rgba(148, 56, 245, 1)"
           }
           onPress={() => toggleDay(4)}
           style={{ marginBottom: 20 }}
@@ -133,7 +133,7 @@ const StarterDias = () => {
         </DefaultButton>
         <DefaultButton
           bgcolor={
-            workoutDays.includes(5) ? "rgba(148, 56, 245, 0.35)" : "#9438F5"
+            workoutDays.includes(5) ? "rgba(148, 56, 245, 0.6)" : "rgba(148, 56, 245, 1)"
           }
           onPress={() => toggleDay(5)}
           style={{ marginBottom: 20 }}
@@ -143,7 +143,7 @@ const StarterDias = () => {
         </DefaultButton>
         <DefaultButton
           bgcolor={
-            workoutDays.includes(6) ? "rgba(148, 56, 245, 0.50)" : "#9438F5"
+            workoutDays.includes(6) ? "rgba(148, 56, 245, 0.50)" : "rgba(148, 56, 245, 1)"
           }
           onPress={() => toggleDay(6)}
           style={{ marginBottom: 20 }}
@@ -153,7 +153,7 @@ const StarterDias = () => {
         </DefaultButton>
         <DefaultButton
           bgcolor={
-            workoutDays.includes(0) ? "rgba(148, 56, 245, 0.35)" : "#9438F5"
+            workoutDays.includes(0) ? "rgba(148, 56, 245, 0.6)" : "rgba(148, 56, 245, 1)"
           }
           onPress={() => toggleDay(0)}
           style={{ marginBottom: 20 }}

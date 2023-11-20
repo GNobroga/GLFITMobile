@@ -3,29 +3,26 @@ import { Dimensions } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import styled from 'styled-components/native';
 
-const MonthScroll = styled.ScrollView`
-    width:100%;
-    height:60px;
-`;
-
 interface IMonthProps {
     width: number | string;
 }
 
 const MonthButton = styled.TouchableHighlight<IMonthProps>`
-    width:${props=> props.width };
+    width:${props=> props.width + 'px'};
     justify-content:center;
     align-items:center;
 `;
 const MonthItem = styled.View`
-    width:90%;
-    height:30px;
+    width: 100%;
+    height:50px;
     background-color:#EEE;
     border-radius:15px;
     justify-content:center;
     align-items:center;
 `;
-const MonthText = styled.Text``;
+const MonthText = styled.Text`
+    font-size: 18px;
+`;
 
 let months = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
 const screenWidth = Math.round(Dimensions.get('window').width);
@@ -64,22 +61,23 @@ export default (props: IProps) => {
 
     return (
         <ScrollView
+            style={{ width: '100%', height: 60, }}
             ref={MonthRef}
             horizontal={true}
             showsHorizontalScrollIndicator={false}
             decelerationRate="fast"
             snapToInterval={thirdW}
-            contentContainerStyle={{paddingLeft:thirdW, paddingRight:thirdW}}
+            contentContainerStyle={{paddingLeft:thirdW, paddingRight:thirdW, gap: 10}}
             onMomentumScrollEnd={handleScrollEnd}
         >
             {months.map((m, k)=>(
                 <MonthButton key={k} width={thirdW} onPress={()=>setSelectedMonth(k)} underlayColor="transparent">
-                    <MonthItem style={k==selectedMonth?{
-                        backgroundColor:'#CCC',
+                    <MonthItem style={k==selectedMonth ? {
+                        backgroundColor:'#9B7AE6', 
                         width:'100%',
-                        height:40
+                        height:50
                     }:{}}>
-                        <MonthText>{m}</MonthText>
+                        <MonthText style={k==selectedMonth ? { color: '#fff'} : {}}>{m}</MonthText>
                     </MonthItem>
                 </MonthButton>
             ))}

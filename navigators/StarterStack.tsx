@@ -6,6 +6,7 @@ import { useNavigation } from "@react-navigation/native";
 import StarterDias from "../screens/starter/StarterDias";
 import StarterNivel from "../screens/starter/StarterNivel";
 import StarterRecommendations from "../screens/starter/StarterRecommendations";
+import HomeTab from "./HomeTab";
 
 const StackNavigator = createStackNavigator();
 
@@ -21,6 +22,7 @@ const ButtonLeftText = styled.Text`
 const StarterStack = () => {
   return (
     <StackNavigator.Navigator
+      initialRouteName="StarterIntro"
       screenOptions={{
         headerLeft: () => {
           const navigation = useNavigation();
@@ -39,12 +41,25 @@ const StarterStack = () => {
         component={StarterIntro}
         options={{
           header: () => null,
+          headerStyle: {
+            marginTop: 20
+          }
         }}
       />
       <StackNavigator.Screen name="StarterName" component={StarterName} />
-      <StackNavigator.Screen name="StarterDias" component={StarterDias}/>
-      <StackNavigator.Screen name="StarterNivel" component={StarterNivel}/>
-      <StackNavigator.Screen name="StarterRecommendations" component={StarterRecommendations}/>
+      <StackNavigator.Screen name="StarterDias" component={StarterDias} />
+      <StackNavigator.Screen name="StarterNivel" component={StarterNivel} />
+      <StackNavigator.Screen
+        name="StarterRecommendations"
+        component={StarterRecommendations}
+      />
+      <StackNavigator.Screen
+        name="Principal"
+        component={HomeTab}
+        options={{
+          header: () => null,
+        }}
+      />
     </StackNavigator.Navigator>
   );
 };

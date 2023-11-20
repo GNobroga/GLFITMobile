@@ -21,6 +21,7 @@ const HeaderText = styled.Text`
     color:#333;
     text-align:center;
     margin-bottom:30px;
+    color: #9438F5;
 `;
 
 const WorkoutList = styled.FlatList`
@@ -41,7 +42,7 @@ const StarterRecommendations = () => {
     const nextAction = () => {
         navigation.reset({
             index: 0,
-            routes: [{ name: 'StarterName' } as any], 
+            routes: [{ name: 'Principal' } as any], 
           });
     }
 

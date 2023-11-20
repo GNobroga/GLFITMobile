@@ -19,11 +19,7 @@ const WelcomeImage = styled.View`
   flex: 1;
   justify-content: center;
 `;
-const WelcomeLogo = styled.Image`
-  object-fit: contain;
-  width: 250px;
-  height: 250px;
-`;
+
 const BeginConfigArea = styled.View`
   width: 100%;
   margin-bottom: 50px;
@@ -31,6 +27,17 @@ const BeginConfigArea = styled.View`
 const ButtonText = styled.Text`
   color: #fff;
   font-size: 20px;
+`;
+
+const Logo = styled.Text`
+  font-size: 90px;
+  color: #9438f5;
+  font-weight: bold;
+`;
+
+const Line = styled.View`
+  height: 5px;
+  background-color: #9438f5;
 `;
 
 const StarterIntro = () => {
@@ -44,7 +51,9 @@ const StarterIntro = () => {
     <Container>
       <WelcomeText>Seja bem vindo(a)</WelcomeText>
       <WelcomeImage>
-        <WelcomeLogo source={require("../../assets/logo.png")} />
+        <Line></Line>
+        <Logo>GLFit</Logo>
+        <Line></Line>
       </WelcomeImage>
       <BeginConfigArea>
         <DefaultButton
@@ -53,7 +62,7 @@ const StarterIntro = () => {
           underlayColor="#0B7AC6"
           onPress={start}
         >
-          <ButtonText>Iniciar</ButtonText>
+          <ButtonText>Começar</ButtonText>
         </DefaultButton>
       </BeginConfigArea>
     </Container>

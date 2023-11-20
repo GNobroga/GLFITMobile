@@ -93,28 +93,28 @@ const StarterNivel = () => {
 
       <LevelArea>
         <DefaultButton
-          bgcolor={level == "beginner" ? "rgba(148, 56, 245, 0.35)" : '#9438F5'}
+          bgcolor={level == "beginner" ? "rgba(148, 56, 245, 0.6)" : 'rgba(148, 56, 245, 1)'}
           onPress={() => setMyLevel("beginner")}
-          style={{ marginBottom: 20 }}
+          style={{ marginBottom: 20, height: 80 }}
           underlayColor="#CCC"
         >
-          <Text style={{ color: '#fff' }}>Iniciante / Um frango</Text>
+          <Text style={{ color: '#fff', fontSize: 18 }}>Iniciante / Um frango</Text>
         </DefaultButton>
         <DefaultButton
-          bgcolor={level == "intermediate" ? "rgba(148, 56, 245, 0.35)" : '#9438F5'}
+          bgcolor={level == "intermediate" ? "rgba(148, 56, 245, 0.6)" : 'rgba(148, 56, 245, 1)'}
           onPress={() => setMyLevel("intermediate")}
-          style={{ marginBottom: 20 }}
+          style={{ marginBottom: 20, height: 80 }}
           underlayColor="#CCC"
         >
-          <Text style={{ color: '#fff' }}>Intermediário / Me viro bem</Text>
+          <Text style={{ color: '#fff', fontSize: 18 }}>Intermediário / Me viro bem</Text>
         </DefaultButton>
         <DefaultButton
-          bgcolor={level == "advanced" ? "rgba(148, 56, 245, 0.35)" : '#9438F5'}
+          bgcolor={level == "advanced" ? "rgba(148, 56, 245, 0.6)" : 'rgba(148, 56, 245, 1)'}
           onPress={() => setMyLevel("advanced")}
-          style={{ marginBottom: 20 }}
+          style={{ marginBottom: 20, height: 80 }}
           underlayColor="#CCC"
         >
-          <Text style={{ color: '#fff' }}>Avançado / Primo do The Rock</Text>
+          <Text style={{ color: '#fff', fontSize: 18 }}>Avançado / Primo do The Rock</Text>
         </DefaultButton>
       </LevelArea>
     </Container>

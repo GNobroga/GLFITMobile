@@ -4,29 +4,25 @@ import { Dimensions } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import styled from 'styled-components/native';
 
-// const DaysScroll = styled.ScrollView`
-//     width:100%;
-//     height:50px;
-// `;
-
 interface IDayButton {
     width: number | string;
 }
 
 const DayButton = styled.TouchableHighlight<IDayButton>`
-    width:${props=>props.width};
+    width:${props=>props.width + 'px'};
     justify-content:center;
     align-items:center;
 `;
 const DayItem = styled.View`
-    width:30px;
-    height:30px;
-    border-radius:15px;
-    background-color:#EEE;
+    width:50px;
+    height:50px;
+    border-radius:25px;
     justify-content:center;
     align-items:center;
 `;
-const DayText = styled.Text``;
+const DayText = styled.Text`
+    font-size: 18px;
+`;
 
 const screenWidth = Math.round(Dimensions.get('window').width);
 let dayW = Math.round(screenWidth / 9);
@@ -41,7 +37,7 @@ interface IDayProps {
 }
 
 const Day = ({day, month, dailyProgress, workoutDays, onPress}: IDayProps) => {
-    let bgColor = '#F4F4F4';
+    let bgColor = '#fff';
     let opacity = 1;
 
     let today = new Date();
@@ -71,7 +67,7 @@ const Day = ({day, month, dailyProgress, workoutDays, onPress}: IDayProps) => {
         }
 
     } else {
-        opacity = 0.2;
+        opacity = 0.8;
     }
 
     if(thisDate.getTime() == today.getTime()) {
@@ -136,12 +132,13 @@ export default (props: IProps) => {
 
     return (
         <ScrollView
+            style={{ width: '100%', height: 50, gap: 5 }}
             ref={DayRef}
             horizontal={true}
             showsHorizontalScrollIndicator={false}
             decelerationRate="fast"
             snapToInterval={dayW}
-            contentContainerStyle={{paddingLeft:offsetW, paddingRight:offsetW}}
+            contentContainerStyle={{paddingLeft:offsetW, paddingRight:offsetW, gap: 6}}
             onMomentumScrollEnd={handleScrollEnd}
         >
             {days.map((d, k)=>(

@@ -25,9 +25,13 @@ const NameInput = styled.TextInput`
   border-radius: 10px;
   font-size: 16px;
   padding: 10px;
-  background-color: #9438f5;
-  color: #fff;
+  background-color: #fff;
+  color: #333;
+  border: 2px solid #9438f5;
+  height: 60px;
 `;
+
+const Image = styled.ImageBackground``;
 
 const StarterName = () => {
   const navigation = useNavigation();

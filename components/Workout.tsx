@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 import useMuscleImage from '../hooks/useMuscleImage';
 
 const Workout = styled.View`
-    background-color: #9438F5;
+    background-color: #fff;
     flex-direction: row;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -15,7 +15,7 @@ const WorkoutInfo = styled.View`
 const WorkoutTitle = styled.Text`
     font-size: 17px;
     margin: 10px;
-    color: #fff;
+    color: #8795C9;
 `;
 const MuscleScroll = styled.ScrollView`
     margin:10px;
@@ -23,7 +23,7 @@ const MuscleScroll = styled.ScrollView`
 const MuscleGroup = styled.View`
     width: 40px;
     height: 40px;
-    background-color: #fff;
+    background-color: #AABDFF;
     border-radius: 5px;
     margin-right: 5px;
     justify-content: center;
